@@ -1,7 +1,12 @@
 import "./App.css";
+import TipCalculator from "./components/TipCalculator";
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <TipCalculator />
+    </>
+  );
 }
 
 export default App;
