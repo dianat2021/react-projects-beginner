@@ -1,0 +1,60 @@
+.counterWrapper {
+  background-color: #16213e;
+  border-radius: 1rem;
+  padding: 3rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.4);
+}
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #a0a0b0;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+}
+.countContainer span {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #e2e2e2;
+  letter-spacing: -0.125rem;
+}
+
+.controlsContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.controlsContainer button {
+  padding: 0.875rem 1.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 0.1s,
+    opacity 0.2s;
+}
+
+.controlsContainer button:hover {
+  opacity: 0.85;
+  transform: scale(1.05);
+}
+
+.increaseButton {
+  background-color: #4361ee;
+  color: #ffffff;
+}
+
+.resetButton {
+  background-color: #7209b7;
+  color: #ffffff;
+}
+
+.decreaseButton {
+  background-color: #e63946;
+  color: #ffffff;
+}
