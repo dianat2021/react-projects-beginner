@@ -1,16 +1,23 @@
 import { useState } from "react";
 import styles from "./TipCalculator.module.css";
 const TipCalculator = () => {
-  const [billAmount, setBillAmount] = useState(0);
+  const [billAmount, setBillAmount] = useState("");
   const [selectedTip, setSelectedTip] = useState(0);
+  const [isAmountValid, setIsAmountValid] = useState(true);
 
   const handleBillAmount = (e) => {
-    const value = Number(e.target.value);
-    setBillAmount(value > 0 ? value : 0);
+    const value = e.target.value;
+    if (value !== "" && Number(value) <= 0) {
+      setIsAmountValid(false);
+    } else {
+      setIsAmountValid(true);
+    }
+    setBillAmount(value);
   };
   const handleReset = () => {
-    setBillAmount(0);
+    setBillAmount("");
     setSelectedTip(0);
+    setIsAmountValid(true);
   };
   return (
     <div className={styles.tipCalculatorWrapper}>
@@ -25,7 +32,14 @@ const TipCalculator = () => {
           className={styles.billInput}
           onChange={handleBillAmount}
           value={billAmount}
+          placeholder="Enter the bill amount"
+          min="1"
         />
+        {!isAmountValid && (
+          <p className={styles.errorParagraph}>
+            Bill amount must be greater than 0
+          </p>
+        )}
       </div>
       {/* Tip buttons */}
       <div className={styles.tipButtonsContainer}>
@@ -57,11 +71,26 @@ const TipCalculator = () => {
       </div>
       {/* Tip results */}
       <div className={styles.tipResultContainer}>
-        <p>Tip amount:{((billAmount * selectedTip) / 100).toFixed(2)}</p>
-        <p>
-          Total amount:
-          {(billAmount + (billAmount * selectedTip) / 100).toFixed(2)}
-        </p>
+        {isAmountValid && (
+          <>
+            <p>
+              <span>Tip amount:</span>
+              <span>
+                ${((Number(billAmount) * selectedTip) / 100).toFixed(2)}
+              </span>
+            </p>
+            <p>
+              <span>Total amount:</span>
+              <span>
+                $
+                {(
+                  Number(billAmount) +
+                  (Number(billAmount) * selectedTip) / 100
+                ).toFixed(2)}
+              </span>
+            </p>
+          </>
+        )}
       </div>
 
       <button type="button" onClick={handleReset}>
