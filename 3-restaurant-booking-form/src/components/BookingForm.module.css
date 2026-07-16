@@ -77,3 +77,9 @@
 .submitButton:hover {
   opacity: 0.85;
 }
+.submitMessage {
+  font-size: var(--font-size-md);
+  color: #22c55e;
+  text-align: center;
+  font-weight: 500;
+}

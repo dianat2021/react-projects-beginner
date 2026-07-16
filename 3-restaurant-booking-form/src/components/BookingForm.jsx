@@ -11,11 +11,19 @@ const BookingForm = () => {
     time: "",
     guestNumber: null,
   });
-  const [bookingErrors, setBookingErrors] = useState({});
-
+  const [bookingErrors, setBookingErrors] = useState({
+    fullNameError: "",
+    emailError: "",
+    phoneNumberError: "",
+    dateError: "",
+    timeError: "",
+    guestNumberError: "",
+  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const handleChange = (e) => {
     setBookingData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
     setBookingErrors((prev) => ({ ...prev, [`${e.target.name}Error`]: "" }));
+    setIsSubmitted(false);
   };
 
   const handleFormValidation = (e) => {
@@ -30,7 +38,7 @@ const BookingForm = () => {
     if (name === "email" && !value) {
       setBookingErrors((prev) => ({
         ...prev,
-        emailError: "Enter you email address",
+        emailError: "Enter your email address",
       }));
     } else if (name === "email" && !emailRegex.test(value)) {
       setBookingErrors((prev) => ({
@@ -70,6 +78,34 @@ const BookingForm = () => {
       }));
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const hasEmptyFields = Object.values(bookingData).some((value) => !value);
+    const hasErrors = Object.values(bookingErrors).some(
+      (error) => error !== "",
+    );
+
+    if (hasEmptyFields || hasErrors) return;
+    setIsSubmitted(true);
+    setBookingData({
+      fullName: "",
+      email: "",
+      phoneNumber: "",
+      date: "",
+      time: "",
+      guestNumber: "",
+    });
+    setBookingErrors({
+      fullNameError: "",
+      emailError: "",
+      phoneNumberError: "",
+      dateError: "",
+      timeError: "",
+      guestNumberError: "",
+    });
+    console.log("submitted");
+  };
+
   return (
     <>
       <header>
@@ -77,7 +113,7 @@ const BookingForm = () => {
       </header>
       <main>
         <div className={styles.formWrapper}>
-          <form className={styles.form}>
+          <form className={styles.form} onSubmit={handleSubmit}>
             {/* Full name input ----------*/}
             <div className={styles.fieldContainer}>
               <label htmlFor="fullName" className={styles.label}>
@@ -208,6 +244,11 @@ const BookingForm = () => {
             <button type="submit" className={styles.submitButton}>
               Book table
             </button>
+            {isSubmitted && (
+              <p className={styles.submitMessage}>
+                Booking was registered successfully!
+              </p>
+            )}
           </form>
         </div>
       </main>
