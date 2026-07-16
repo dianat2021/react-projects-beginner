@@ -71,99 +71,147 @@ const BookingForm = () => {
   };
 
   return (
-    <div className={styles.formWrapper}>
-      <form>
-        {/* Full name input ----------*/}
-        <div>
-          <label htmlFor="fullName">Full name</label>
-          <input
-            type="text"
-            name="fullName"
-            id="fullName"
-            placeholder="e.g. John Smith"
-            onChange={handleChange}
-            value={bookingData.fullName}
-            onBlur={handleFormValidation}
-          />
-          {bookingErrors.fullNameError && <p>{bookingErrors.fullNameError}</p>}
-        </div>
-        {/* Email input ----------*/}
-        <div>
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="e.g. John.Smith@gmail.com"
-            onChange={handleChange}
-            value={bookingData.email}
-            onBlur={handleFormValidation}
-          />
-          {bookingErrors.emailError && <p>{bookingErrors.emailError}</p>}
-        </div>
-        {/* Phone number ----------*/}
-        <div>
-          <label htmlFor="phoneNumber">Phone number</label>
+    <>
+      <header>
+        <h1 className={styles.title}>Restaurant Booking Form</h1>
+      </header>
+      <main>
+        <div className={styles.formWrapper}>
+          <form className={styles.form}>
+            {/* Full name input ----------*/}
+            <div className={styles.fieldContainer}>
+              <label htmlFor="fullName" className={styles.label}>
+                Full name
+              </label>
+              <input
+                type="text"
+                name="fullName"
+                id="fullName"
+                placeholder="e.g. John Smith"
+                onChange={handleChange}
+                value={bookingData.fullName}
+                onBlur={handleFormValidation}
+                className={styles.input}
+              />
+              {bookingErrors.fullNameError && (
+                <p className={styles.errorParagraph}>
+                  {bookingErrors.fullNameError}
+                </p>
+              )}
+            </div>
+            {/* Email input ----------*/}
+            <div className={styles.fieldContainer}>
+              <label htmlFor="email" className={styles.label}>
+                Email
+              </label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="e.g. John.Smith@gmail.com"
+                onChange={handleChange}
+                value={bookingData.email}
+                onBlur={handleFormValidation}
+                className={styles.input}
+              />
+              {bookingErrors.emailError && (
+                <p className={styles.errorParagraph}>
+                  {bookingErrors.emailError}
+                </p>
+              )}
+            </div>
+            {/* Phone number ----------*/}
+            <div className={styles.fieldContainer}>
+              <label htmlFor="phoneNumber" className={styles.label}>
+                Phone number
+              </label>
 
-          <input
-            type="tel"
-            name="phoneNumber"
-            id="phoneNumber"
-            placeholder="12345678"
-            onChange={handleChange}
-            value={bookingData.phoneNumber}
-            onBlur={handleFormValidation}
-          />
-          {bookingErrors.phoneNumberError && (
-            <p>{bookingErrors.phoneNumberError}</p>
-          )}
-        </div>
-        {/* Date input ----------*/}
-        <div>
-          <label htmlFor="date">Date</label>
-          <input
-            type="date"
-            name="date"
-            id="date"
-            onChange={handleChange}
-            value={bookingData.date}
-            onBlur={handleFormValidation}
-          />
-          {bookingErrors.dateError && <p>{bookingErrors.dateError}</p>}
-        </div>
-        {/* Time input ----------*/}
-        <div>
-          <label htmlFor="time">Time</label>
-          <input
-            type="time"
-            name="time"
-            id="time"
-            onChange={handleChange}
-            value={bookingData.time}
-            onBlur={handleFormValidation}
-          />
-          {bookingErrors.timeError && <p>{bookingErrors.timeError}</p>}
-        </div>
-        {/* Guest number input ----------*/}
-        <div>
-          <label htmlFor="guestNumber">Number of guests</label>
+              <input
+                type="tel"
+                name="phoneNumber"
+                id="phoneNumber"
+                placeholder="12345678"
+                onChange={handleChange}
+                value={bookingData.phoneNumber}
+                onBlur={handleFormValidation}
+                className={styles.input}
+              />
+              {bookingErrors.phoneNumberError && (
+                <p className={styles.errorParagraph}>
+                  {bookingErrors.phoneNumberError}
+                </p>
+              )}
+            </div>
+            {/* Date input ----------*/}
+            <div className={styles.fieldContainer}>
+              <label htmlFor="date" className={styles.label}>
+                Date
+              </label>
+              <input
+                type="date"
+                name="date"
+                id="date"
+                onChange={handleChange}
+                value={bookingData.date}
+                onBlur={handleFormValidation}
+                className={styles.input}
+              />
+              {bookingErrors.dateError && (
+                <p className={styles.errorParagraph}>
+                  {bookingErrors.dateError}
+                </p>
+              )}
+            </div>
+            {/* Time input ----------*/}
+            <div className={styles.fieldContainer}>
+              <label htmlFor="time" className={styles.label}>
+                Time
+              </label>
+              <input
+                type="time"
+                name="time"
+                id="time"
+                onChange={handleChange}
+                value={bookingData.time}
+                onBlur={handleFormValidation}
+                className={styles.input}
+              />
+              {bookingErrors.timeError && (
+                <p className={styles.errorParagraph}>
+                  {bookingErrors.timeError}
+                </p>
+              )}
+            </div>
+            {/* Guest number input ----------*/}
+            <div className={styles.fieldContainer}>
+              <label htmlFor="guestNumber" className={styles.label}>
+                Number of guests
+              </label>
 
-          <input
-            type="number"
-            name="guestNumber"
-            id="guestNumber"
-            min={1}
-            onChange={handleChange}
-            value={bookingData.guestNumber || ""}
-            onBlur={handleFormValidation}
-          />
-          {bookingErrors.guestNumberError && (
-            <p>{bookingErrors.guestNumberError}</p>
-          )}
+              <input
+                type="number"
+                name="guestNumber"
+                id="guestNumber"
+                min={1}
+                onChange={handleChange}
+                placeholder="e.g. 4"
+                value={bookingData.guestNumber || ""}
+                onBlur={handleFormValidation}
+                className={styles.input}
+              />
+              {bookingErrors.guestNumberError && (
+                <p className={styles.errorParagraph}>
+                  {bookingErrors.guestNumberError}
+                </p>
+              )}
+            </div>
+            <button type="submit" className={styles.submitButton}>
+              Book table
+            </button>
+          </form>
         </div>
-        <button type="submit">Book table</button>
-      </form>
-    </div>
+      </main>
+    </>
   );
 };
 export default BookingForm;
