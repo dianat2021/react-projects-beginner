@@ -1,0 +1,42 @@
+@font-face {
+  font-family: "OpenSans-VariableFont";
+  src: url("./assets/fonts/OpenSans-VariableFont.ttf");
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-bg: #f0f4f8;
+  --color-card: #ffffff;
+  --color-input: #f8fafc;
+  --color-primary: hsl(224, 59%, 85%);
+  --color-primary-hover: #1d4ed8;
+  --color-error: #ef4444;
+  --color-success: #22c55e;
+  --color-text: #1e293b;
+  --color-text-muted: #64748b;
+  --color-border: #e2e8f0;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+
+  --font-size-sm: 0.75rem;
+  --font-size-md: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "OpenSans-VariableFont", sans-serif;
+}

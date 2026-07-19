@@ -1,0 +1,7 @@
+.header {
+  padding: var(--spacing-lg) 0;
+  background-color: var(--color-primary);
+}
+.mainTitle {
+  text-align: center;
+}
