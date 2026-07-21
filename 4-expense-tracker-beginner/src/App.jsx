@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import ExpenseForm from "./components/ExpenseForm/ExpenseForm";
 import Heading from "./components/Heading/Heading";
+import ExpenseList from "./components/ExpenseList/ExpenseList";
 
 function App() {
   const [expenseList, setExpenseList] = useState([]);
@@ -15,6 +16,7 @@ function App() {
             setExpenseList={setExpenseList}
           />
         </div>
+        <ExpenseList expenseList={expenseList} />
       </main>
     </>
   );
