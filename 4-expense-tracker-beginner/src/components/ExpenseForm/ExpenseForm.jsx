@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./ExpenseForm.module.css";
+
 const ExpenseForm = ({ setExpenseList }) => {
   const [expenseData, setExpenseData] = useState({
     title: "",
@@ -8,13 +9,43 @@ const ExpenseForm = ({ setExpenseList }) => {
     category: "",
   });
 
+  const [expenseErrors, setExpenseErrors] = useState({
+    titleError: "",
+    amountError: "",
+    dateError: "",
+    categoryError: "",
+  });
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setExpenseData((prev) => ({ ...prev, [name]: value }));
+    setExpenseErrors((prev) => ({ ...prev, [`${name}Error`]: "" }));
+  };
+
+  const handleFormValidation = () => {
+    const errors = {};
+
+    if (!expenseData.title) errors.titleError = "Expense title is required";
+
+    if (!expenseData.amount) {
+      errors.amountError = "Expense amount is required";
+    } else if (Number(expenseData.amount) <= 0) {
+      errors.amountError = "Expense amount must be more than 0";
+    }
+
+    if (!expenseData.date) errors.dateError = "Expense date is required";
+
+    if (!expenseData.category) errors.categoryError = "Select expense category";
+
+    setExpenseErrors(errors);
+    return Object.keys(errors).length === 0;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const isValid = handleFormValidation();
+    if (!isValid) return;
+
     const newExpense = {
       ...expenseData,
       id: crypto.randomUUID(),
@@ -25,6 +56,12 @@ const ExpenseForm = ({ setExpenseList }) => {
       amount: "",
       date: "",
       category: "",
+    });
+    setExpenseErrors({
+      titleError: "",
+      amountError: "",
+      dateError: "",
+      categoryError: "",
     });
   };
 
@@ -42,6 +79,9 @@ const ExpenseForm = ({ setExpenseList }) => {
             onChange={handleChange}
             value={expenseData.title}
           />
+          {expenseErrors.titleError && (
+            <p className={styles.errorParagraph}>{expenseErrors.titleError}</p>
+          )}
         </div>
         <div className={styles.inputGroup}>
           <label htmlFor="amount">Expense amount</label>
@@ -50,10 +90,13 @@ const ExpenseForm = ({ setExpenseList }) => {
             name="amount"
             id="amount"
             className={styles.formInput}
-            placeholder="e.g. 45 "
+            placeholder="e.g. 45"
             onChange={handleChange}
             value={expenseData.amount}
           />
+          {expenseErrors.amountError && (
+            <p className={styles.errorParagraph}>{expenseErrors.amountError}</p>
+          )}
         </div>
         <div className={styles.inputGroup}>
           <label htmlFor="date">Expense date</label>
@@ -65,6 +108,9 @@ const ExpenseForm = ({ setExpenseList }) => {
             onChange={handleChange}
             value={expenseData.date}
           />
+          {expenseErrors.dateError && (
+            <p className={styles.errorParagraph}>{expenseErrors.dateError}</p>
+          )}
         </div>
         <div className={styles.inputGroup}>
           <label htmlFor="category">Expense category</label>
@@ -83,6 +129,11 @@ const ExpenseForm = ({ setExpenseList }) => {
             <option value="entertainment">Entertainment</option>
             <option value="other">Other</option>
           </select>
+          {expenseErrors.categoryError && (
+            <p className={styles.errorParagraph}>
+              {expenseErrors.categoryError}
+            </p>
+          )}
         </div>
       </div>
       <button type="submit" className={styles.submitButton}>
@@ -91,4 +142,5 @@ const ExpenseForm = ({ setExpenseList }) => {
     </form>
   );
 };
+
 export default ExpenseForm;
