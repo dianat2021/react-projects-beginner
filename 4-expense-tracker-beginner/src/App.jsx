@@ -16,7 +16,10 @@ function App() {
             setExpenseList={setExpenseList}
           />
         </div>
-        <ExpenseList expenseList={expenseList} />
+        <ExpenseList
+          expenseList={expenseList}
+          setExpenseList={setExpenseList}
+        />
       </main>
     </>
   );
