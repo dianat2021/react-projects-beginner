@@ -3,6 +3,7 @@ import "./App.css";
 import ExpenseForm from "./components/ExpenseForm/ExpenseForm";
 import Heading from "./components/Heading/Heading";
 import ExpenseList from "./components/ExpenseList/ExpenseList";
+import Total from "./components/Total/Total";
 
 function App() {
   const [expenseList, setExpenseList] = useState([]);
@@ -20,6 +21,7 @@ function App() {
           expenseList={expenseList}
           setExpenseList={setExpenseList}
         />
+        <Total expenseList={expenseList} />
       </main>
     </>
   );

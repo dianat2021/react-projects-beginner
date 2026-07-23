@@ -1,0 +1,22 @@
+.totalWrapper {
+  position: fixed;
+  bottom: var(--spacing-lg);
+  right: var(--spacing-lg);
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.total {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+}
+
+.label {
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  color: #ffffff;
+  margin-right: var(--spacing-sm);
+}
