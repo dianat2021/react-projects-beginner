@@ -4,4 +4,5 @@
 }
 .mainTitle {
   text-align: center;
+  color: var(--color-text-white);
 }

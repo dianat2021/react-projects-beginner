@@ -14,9 +14,10 @@
   --color-bg: #f0f4f8;
   --color-card: #ffffff;
   --color-input: #f8fafc;
-  --color-primary: hsl(224, 59%, 85%);
-  --color-button: hsl(284, 77%, 30%);
-  --color-primary-hover: #1d4ed8;
+  --color-primary: hsl(225, 15%, 59%);
+  --color-primary-2: hsl(222, 10%, 20%);
+  --color-button: hsl(300, 11%, 26%);
+  --color-primary-hover: #765782;
   --color-error: #ef4444;
   --color-success: #22c55e;
   --color-text: #1e293b;
@@ -43,4 +44,5 @@
 body {
   min-height: 100vh;
   font-family: "OpenSans-VariableFont", sans-serif;
+  background-color: var(--color-primary-2);
 }

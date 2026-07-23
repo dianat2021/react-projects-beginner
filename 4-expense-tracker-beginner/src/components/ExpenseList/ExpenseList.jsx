@@ -11,14 +11,17 @@ const ExpenseList = ({ expenseList, setExpenseList }) => {
         <span>Actions</span>
       </div>
       <ul>
-        {expenseList.map((expense) => (
-          <Expense
-            expense={expense}
-            key={expense.id}
-            setExpenseList={setExpenseList}
-            expenseList={expenseList}
-          />
-        ))}
+        {expenseList.length === 0 ? (
+          <p className={styles.emptyList}>No expenses to display!</p>
+        ) : (
+          expenseList.map((expense) => (
+            <Expense
+              expense={expense}
+              key={expense.id}
+              setExpenseList={setExpenseList}
+            />
+          ))
+        )}
       </ul>
     </div>
   );
