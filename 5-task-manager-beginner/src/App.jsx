@@ -11,7 +11,7 @@ function App() {
       <Heading />
       <main>
         <TaskForm setTaskList={setTaskList} />
-        <TaskList taskList={taskList} />
+        <TaskList taskList={taskList} setTaskList={setTaskList} />
       </main>
     </>
   );
