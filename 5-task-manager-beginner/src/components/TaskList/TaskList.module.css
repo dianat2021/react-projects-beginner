@@ -9,7 +9,7 @@
 
 .taskListHeader {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
   padding: var(--spacing-md) var(--spacing-lg);
   background-color: var(--color-primary);
   color: #ffffff;
@@ -17,6 +17,13 @@
   font-weight: 600;
 }
 
-.taskList {
-  list-style: none;
+@media (max-width: 768px) {
+  .taskListHeader {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .taskItem {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-sm);
+  }
 }
