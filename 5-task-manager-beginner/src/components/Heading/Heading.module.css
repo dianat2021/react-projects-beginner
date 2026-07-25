@@ -1,0 +1,5 @@
+.header {
+  color: var(--color-text);
+  text-align: center;
+  padding: var(--spacing-xl) 0;
+}
