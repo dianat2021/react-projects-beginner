@@ -9,7 +9,7 @@ function App() {
     <>
       <Heading />
       <main>
-        <TaskForm />
+        <TaskForm setTaskList={setTaskList} />
       </main>
     </>
   );

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./TaskForm.module.css";
-const TaskForm = () => {
+const TaskForm = ({ setTaskList }) => {
   // taskData state initialized with empty string to collect form data
   const [taskData, setTaskData] = useState({
     title: "",
@@ -36,6 +36,16 @@ const TaskForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!handleValidation()) return;
+    const newTask = {
+      id: crypto.randomUUID(),
+      ...taskData,
+    };
+    setTaskList((prev) => [...prev, newTask]);
+    setTaskData({
+      title: "",
+      date: "",
+      status: "",
+    });
   };
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
