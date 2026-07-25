@@ -74,3 +74,7 @@
 .submitButton:hover {
   background-color: var(--color-primary-hover);
 }
+.formError {
+  font-size: var(--font-size-md);
+  color: var(--color-error);
+}
