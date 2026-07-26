@@ -1,10 +1,11 @@
 import { useState } from "react";
 import styles from "./TipCalculator.module.css";
 const TipCalculator = () => {
+  // States
   const [billAmount, setBillAmount] = useState("");
   const [selectedTip, setSelectedTip] = useState(0);
   const [isAmountValid, setIsAmountValid] = useState(true);
-
+  // Handlers
   const handleBillAmount = (e) => {
     const value = e.target.value;
     if (value !== "" && Number(value) <= 0) {

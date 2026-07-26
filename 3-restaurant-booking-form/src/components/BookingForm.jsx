@@ -3,13 +3,14 @@ import styles from "./BookingForm.module.css";
 
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const BookingForm = () => {
+  // States
   const [bookingData, setBookingData] = useState({
     fullName: "",
     email: "",
     phoneNumber: "",
     date: "",
     time: "",
-    guestNumber: null,
+    guestNumber: "",
   });
   const [bookingErrors, setBookingErrors] = useState({
     fullNameError: "",
@@ -20,6 +21,7 @@ const BookingForm = () => {
     guestNumberError: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  // Handlers
   const handleChange = (e) => {
     setBookingData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
     setBookingErrors((prev) => ({ ...prev, [`${e.target.name}Error`]: "" }));
@@ -231,7 +233,7 @@ const BookingForm = () => {
                 min={1}
                 onChange={handleChange}
                 placeholder="e.g. 4"
-                value={bookingData.guestNumber || ""}
+                value={bookingData.guestNumber}
                 onBlur={handleFormValidation}
                 className={styles.input}
               />
