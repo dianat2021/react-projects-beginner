@@ -1,5 +1,5 @@
 .counterWrapper {
-  background-color: #16213e;
+  background-color: #222831;
   border-radius: 1rem;
   padding: 3rem 4rem;
   display: flex;
@@ -40,17 +40,16 @@
 }
 
 .controlsContainer button:hover {
-  opacity: 0.85;
   transform: scale(1.05);
 }
 
 .increaseButton {
-  background-color: #4361ee;
+  background-color: #4c9173;
   color: #ffffff;
 }
 
 .resetButton {
-  background-color: #7209b7;
+  background-color: #3a4750;
   color: #ffffff;
 }
 

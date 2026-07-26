@@ -1,7 +1,9 @@
 import { useState } from "react";
 import styles from "./Counter.module.css";
 const Counter = () => {
+  // State
   const [count, setCount] = useState(0);
+  // Handlers
   const handleIncrease = () => {
     setCount((prev) => prev + 1);
   };
