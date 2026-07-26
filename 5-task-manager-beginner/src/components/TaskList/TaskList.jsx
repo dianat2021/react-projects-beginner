@@ -10,9 +10,13 @@ const TaskList = ({ taskList, setTaskList }) => {
         <span className={styles.controlsHeader}>Controls</span>
       </div>
       <ul className={styles.taskList}>
-        {taskList.map((item) => (
-          <Task key={item.id} task={item} setTaskList={setTaskList} />
-        ))}
+        {taskList.length === 0 ? (
+          <p className={styles.emptyTaskList}>No tasks to display!</p>
+        ) : (
+          taskList.map((item) => (
+            <Task key={item.id} task={item} setTaskList={setTaskList} />
+          ))
+        )}
       </ul>
     </div>
   );
