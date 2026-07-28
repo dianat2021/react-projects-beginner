@@ -1,0 +1,57 @@
+.form {
+  background-color: var(--color-card);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xl);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  width: 400px;
+}
+
+.label {
+  font-size: var(--font-size-md);
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.input {
+  background-color: var(--color-input);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s;
+  margin: var(--spacing-md) 0;
+}
+
+.input:focus {
+  border-color: var(--color-primary);
+}
+
+.submitButton {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: none;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-primary);
+  color: #ffffff;
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submitButton:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.display {
+  background-color: var(--color-card);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xl);
+  margin-top: var(--spacing-md);
+  width: 400px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}

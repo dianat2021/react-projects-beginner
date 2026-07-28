@@ -1,9 +1,10 @@
 import "./App.css";
+import AgeCalculator from "./components/AgeCalculator/AgeCalculator";
 
 function App() {
   return (
     <>
-      <h1>Test</h1>
+      <AgeCalculator />
     </>
   );
 }
