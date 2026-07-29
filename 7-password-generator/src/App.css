@@ -1,0 +1,20 @@
+.header {
+  width: 100%;
+  padding: var(--spacing-lg) var(--spacing-xl);
+  background-color: var(--color-card);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.title {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-primary);
+  text-align: center;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
