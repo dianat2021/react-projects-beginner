@@ -4,6 +4,7 @@ const AgeCalculator = () => {
   // States
   const [birthDate, setBirthDate] = useState("");
   const [birthDateError, setBirthDateError] = useState("");
+  const [age, setAge] = useState(null);
   // Handlers
   const handleChange = (e) => {
     setBirthDate(e.target.value);
@@ -21,9 +22,30 @@ const AgeCalculator = () => {
     setBirthDateError(error);
     return error === "";
   };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const today = new Date();
+    const selectedDate = new Date(birthDate);
+    if (!handleValidation()) return;
+    const ageInMil = today.getTime() - selectedDate.getTime();
+    // Calculate years
+    const years = Math.floor(ageInMil / (1000 * 60 * 60 * 24 * 365.25));
+    // Calculate months
+    const monthsDiff = today.getMonth() - selectedDate.getMonth();
+    const months = monthsDiff < 0 ? monthsDiff + 12 : monthsDiff;
+    // Calculate days
+    const daysDiff = today.getDate() - selectedDate.getDate();
+    const days = daysDiff < 0 ? daysDiff + 30 : daysDiff;
+    setAge({
+      years,
+      months,
+      days,
+    });
+    setBirthDate("");
+  };
   return (
     <>
-      <form className={styles.form}>
+      <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.inputWrapper}>
           <label htmlFor="birthDate" className={styles.label}>
             Birthdate
@@ -46,8 +68,9 @@ const AgeCalculator = () => {
       </form>
       <div className={styles.display}>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi,
-          quis.
+          {age
+            ? `You are ${age.years} Years, ${age.months} months, and ${age.days} days old!`
+            : "Enter your bithdate and press calculate age."}
         </p>
       </div>
     </>
