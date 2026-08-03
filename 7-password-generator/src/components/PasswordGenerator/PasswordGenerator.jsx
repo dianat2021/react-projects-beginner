@@ -4,6 +4,7 @@ const chars =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=";
 const PasswordGenerator = () => {
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const generateRandomNum = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   };
@@ -19,9 +20,21 @@ const PasswordGenerator = () => {
   };
   return (
     <div className={styles.wrapper}>
-      <p className={styles.password}>
-        {password ? password : "Click generate to start"}{" "}
-      </p>
+      <input
+        type={password && !showPassword ? "password" : "text"}
+        readOnly
+        value={password || "Click generate to start"}
+        className={styles.password}
+      />
+      <div className={styles.showPassWrapper}>
+        <input
+          type="checkbox"
+          name="showPassword"
+          id="showPassword"
+          onChange={() => setShowPassword((prev) => !prev)}
+        />
+        <label htmlFor="showPassword">Show password</label>
+      </div>
       <button
         type="button"
         className={styles.generateButton}
