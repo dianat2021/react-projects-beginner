@@ -1,0 +1,49 @@
+.accordionWrapper {
+  width: 600px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: var(--color-card);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  margin-bottom: var(--spacing-md);
+}
+
+.accordionHeader {
+  width: 100%;
+}
+
+.accordionToggle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: var(--color-card);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.accordionToggle:hover {
+  background-color: var(--color-bg);
+}
+
+.accordionHeading {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.accordionToggleLogo {
+  font-size: var(--font-size-lg);
+  color: var(--color-primary);
+  transition: transform 0.2s;
+}
+
+.accordionContent {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
