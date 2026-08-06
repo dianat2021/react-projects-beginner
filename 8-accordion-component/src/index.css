@@ -30,14 +30,3 @@
   --spacing-lg: 1.5rem;
   --spacing-xl: 2rem;
 }
-
-body {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding-top: var(--spacing-xxl);
-  background-color: var(--color-bg);
-  font-family: sans-serif;
-  color: var(--color-text);
-}

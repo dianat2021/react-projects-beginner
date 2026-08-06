@@ -3,9 +3,9 @@ import Accordion from "./components/Accordion/Accordion";
 
 function App() {
   return (
-    <>
+    <div>
       <Accordion />
-    </>
+    </div>
   );
 }
 
