@@ -1,9 +1,10 @@
 import "./App.css";
+import ProfileCard from "./components/ProfileCard/ProfileCard";
 
 function App() {
   return (
     <>
-      <h1>Test</h1>
+      <ProfileCard />
     </>
   );
 }
