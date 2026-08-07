@@ -1,0 +1,30 @@
+.wrapper {
+  background-color: var(--color-card);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xl);
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.starsWrapper {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.star {
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.star:hover {
+  transform: scale(1.1);
+}
+
+.ratingText {
+  font-size: var(--font-size-md);
+  color: var(--color-text-muted);
+}

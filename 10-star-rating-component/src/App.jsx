@@ -1,9 +1,10 @@
 import "./App.css";
+import StarRating from "./components/StarRating/StarRating";
 
 function App() {
   return (
     <>
-      <h1>test</h1>
+      <StarRating />
     </>
   );
 }
