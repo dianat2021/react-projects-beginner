@@ -1,5 +1,6 @@
 .tipCalculatorWrapper {
-  background-color: #16213e;
+  background-color: #1e3a5f;
+  color: #fff;
   border-radius: 1rem;
   padding: 2.5rem 3rem;
   display: flex;
@@ -12,7 +13,7 @@
 .title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #a0a0b0;
+
   text-transform: uppercase;
   letter-spacing: 0.15rem;
   text-align: center;
@@ -26,7 +27,6 @@
 
 .billContainer label {
   font-size: 0.875rem;
-  color: #a0a0b0;
 }
 
 .billInput {
@@ -35,7 +35,7 @@
   border-radius: 0.5rem;
   padding: 0.75rem 1rem;
   font-size: 1rem;
-  color: #e2e2e2;
+  color: #fff;
   width: 100%;
   outline: none;
 }
@@ -53,21 +53,22 @@
 
 .tipButtonsContainer p {
   font-size: 0.875rem;
-  color: #a0a0b0;
+
   width: 100%;
 }
 
 .tipOption {
   flex: 1;
   padding: 0.75rem;
-  border: 2px solid #0f3460;
+  border: 2px solid #fff;
   border-radius: 0.5rem;
   background-color: transparent;
-  color: #a0a0b0;
+
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s;
+  color: #fff;
 }
 
 .tipOption:hover {
@@ -92,7 +93,7 @@
 
 .tipResultContainer p {
   font-size: 1rem;
-  color: #e2e2e2;
+
   display: flex;
   justify-content: space-between;
 }

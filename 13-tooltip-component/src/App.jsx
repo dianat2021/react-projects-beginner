@@ -1,9 +1,10 @@
 import "./App.css";
+import Tooltip from "./components/Tooltip/Tooltip";
 
 function App() {
   return (
     <>
-      <h1>Test</h1>
+      <Tooltip />
     </>
   );
 }
