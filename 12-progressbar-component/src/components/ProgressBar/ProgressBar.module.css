@@ -1,0 +1,56 @@
+.wrapper {
+  background-color: var(--color-card);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xl);
+  width: 500px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.barContainer {
+  background-color: var(--color-bar-bg);
+  border-radius: var(--radius-full);
+  height: 36px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.bar {
+  height: 100%;
+  width: 0%;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: progress 5s linear forwards;
+}
+
+.progressPercentage {
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  color: #ffffff;
+  white-space: nowrap;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes progress {
+  0% {
+    width: 0%;
+    background-color: red;
+  }
+  25% {
+    width: 25%;
+    background-color: orange;
+  }
+  50% {
+    width: 50%;
+    background-color: yellow;
+  }
+  100% {
+    width: 100%;
+    background-color: green;
+  }
+}
