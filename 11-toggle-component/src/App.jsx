@@ -1,11 +1,10 @@
 import "./App.css";
-
-function App() {
+import ToggleSwitch from "./components/ToggleSwitch/ToggleSwitch";
+const App = () => {
   return (
     <>
-      <h1>Test</h1>
+      <ToggleSwitch />
     </>
   );
-}
-
+};
 export default App;
